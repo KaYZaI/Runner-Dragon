@@ -15,3 +15,9 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",compone
 
 # Cyan
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{team:"cyan"}}}}] run function runnerdragon:team/cyan
+
+# Orange
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{team:"orange"}}}}] run function runnerdragon:team/orange
+
+# Gris
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{team:"gris"}}}}] run function runnerdragon:team/gray

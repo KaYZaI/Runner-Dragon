@@ -33,3 +33,15 @@ team modify cyan color aqua
 team modify cyan displayName {"text":"Cyan","color":"aqua"}
 team modify cyan friendlyFire false
 team modify cyan collisionRule pushOtherTeams
+
+# ORANGE
+team modify orange color gold
+team modify orange displayName {"text":"Orange","color":"gold"}
+team modify orange friendlyFire false
+team modify orange collisionRule pushOtherTeams
+
+# GRIS
+team modify gris color gray
+team modify gris displayName {"text":"Gris","color":"gray"}
+team modify gris friendlyFire false
+team modify gris collisionRule pushOtherTeams

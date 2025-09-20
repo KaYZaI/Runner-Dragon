@@ -55,6 +55,8 @@ team add vert
 team add jaune
 team add magenta
 team add cyan
+team add orange
+team add gris
 
 # Config des équipes
 function runnerdragon:teams_configs
@@ -64,3 +66,4 @@ scoreboard objectives add team_select minecraft.used:minecraft.carrot_on_a_stick
 
 # Mettre tous les joueurs actuels en Adventure (phase d’attente)
 gamemode adventure @a
+gamerule keepInventory true

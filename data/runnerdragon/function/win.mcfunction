@@ -28,6 +28,16 @@ execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dr
 execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=cyan] if score $chrono chrono_sec matches ..9 run tellraw @a {"text":"","extra":[{"text":"Victoire de l'équipe CYAN qui a vaincu le dragon en ","color":"aqua","bold":true},{"score":{"name":"$chrono","objective":"chrono_min"},"color":"white","bold":true},{"text":":0","color":"white","bold":true},{"score":{"name":"$chrono","objective":"chrono_sec"},"color":"white","bold":true},{"text":" !","color":"aqua","bold":true}]}
 execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=cyan] if score $chrono chrono_sec matches 10.. run tellraw @a {"text":"","extra":[{"text":"Victoire de l'équipe CYAN qui a vaincu le dragon en ","color":"aqua","bold":true},{"score":{"name":"$chrono","objective":"chrono_min"},"color":"white","bold":true},{"text":":","color":"white","bold":true},{"score":{"name":"$chrono","objective":"chrono_sec"},"color":"white","bold":true},{"text":" !","color":"aqua","bold":true}]}
 
+# ORANGE
+execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=orange] run title @a title {"text":"Victoire de l'équipe ORANGE !","color":"gold"}
+execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=orange] if score $chrono chrono_sec matches ..9 run tellraw @a {"text":"","extra":[{"text":"Victoire de l'équipe ORANGE qui a vaincu le dragon en ","color":"gold","bold":true},{"score":{"name":"$chrono","objective":"chrono_min"},"color":"white","bold":true},{"text":":0","color":"white","bold":true},{"score":{"name":"$chrono","objective":"chrono_sec"},"color":"white","bold":true},{"text":" !","color":"gold","bold":true}]}
+execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=orange] if score $chrono chrono_sec matches 10.. run tellraw @a {"text":"","extra":[{"text":"Victoire de l'équipe ORANGE qui a vaincu le dragon en ","color":"gold","bold":true},{"score":{"name":"$chrono","objective":"chrono_min"},"color":"white","bold":true},{"text":":","color":"white","bold":true},{"score":{"name":"$chrono","objective":"chrono_sec"},"color":"white","bold":true},{"text":" !","color":"gold","bold":true}]}
+
+# GRIS
+execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=gris] run title @a title {"text":"Victoire de l'équipe GRISE !","color":"gray"}
+execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=gris] if score $chrono chrono_sec matches ..9 run tellraw @a {"text":"","extra":[{"text":"Victoire de l'équipe GRISE qui a vaincu le dragon en ","color":"gray","bold":true},{"score":{"name":"$chrono","objective":"chrono_min"},"color":"white","bold":true},{"text":":0","color":"white","bold":true},{"score":{"name":"$chrono","objective":"chrono_sec"},"color":"white","bold":true},{"text":" !","color":"gray","bold":true}]}
+execute if score $state game matches 1 as @a[advancements={minecraft:end/kill_dragon=true},limit=1,team=gris] if score $chrono chrono_sec matches 10.. run tellraw @a {"text":"","extra":[{"text":"Victoire de l'équipe GRISE qui a vaincu le dragon en ","color":"gray","bold":true},{"score":{"name":"$chrono","objective":"chrono_min"},"color":"white","bold":true},{"text":":","color":"white","bold":true},{"score":{"name":"$chrono","objective":"chrono_sec"},"color":"white","bold":true},{"text":" !","color":"gray","bold":true}]}
+
 # 1) Snapshot immédiat (empêche toute triche en spectateur)
 function runnerdragon:rank/snapshot
 
@@ -60,6 +70,14 @@ execute if score $state game matches 1 as @a[team=magenta] at @s unless block ~ 
 # CYAN
 execute if score $state game matches 1 as @a[team=cyan] at @s if block ~ ~ ~ air run setblock ~ ~ ~ cyan_stained_glass
 execute if score $state game matches 1 as @a[team=cyan] at @s unless block ~ ~ ~ air if block ~ ~1 ~ air run setblock ~ ~1 ~ cyan_stained_glass
+
+# ORANGE
+execute if score $state game matches 1 as @a[team=orange] at @s if block ~ ~ ~ air run setblock ~ ~ ~ orange_stained_glass
+execute if score $state game matches 1 as @a[team=orange] at @s unless block ~ ~ ~ air if block ~ ~1 ~ air run setblock ~ ~1 ~ orange_stained_glass
+
+# GRIS
+execute if score $state game matches 1 as @a[team=gris] at @s if block ~ ~ ~ air run setblock ~ ~ ~ gray_stained_glass
+execute if score $state game matches 1 as @a[team=gris] at @s unless block ~ ~ ~ air if block ~ ~1 ~ air run setblock ~ ~1 ~ gray_stained_glass
 
 # COMMUN à toutes les équipes → son + spectateur
 execute if score $state game matches 1 if entity @a[advancements={minecraft:end/kill_dragon=true}] run gamemode spectator @a

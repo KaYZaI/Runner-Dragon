@@ -29,6 +29,8 @@ scoreboard players set team_vert dist2 2147483647
 scoreboard players set team_jaune dist2 2147483647
 scoreboard players set team_magenta dist2 2147483647
 scoreboard players set team_cyan dist2 2147483647
+scoreboard players set team_orange dist2 2147483647
+scoreboard players set team_gris dist2 2147483647
 
 # 4b) Pour chaque joueur -> si @s est plus proche que le min courant, on remplace (via team_id)
 execute as @a if score @s team_id matches 1 if score @s dist2 < team_rouge dist2 run scoreboard players operation team_rouge dist2 = @s dist2
@@ -37,6 +39,8 @@ execute as @a if score @s team_id matches 3 if score @s dist2 < team_vert dist2 
 execute as @a if score @s team_id matches 4 if score @s dist2 < team_jaune dist2 run scoreboard players operation team_jaune dist2 = @s dist2
 execute as @a if score @s team_id matches 5 if score @s dist2 < team_magenta dist2 run scoreboard players operation team_magenta dist2 = @s dist2
 execute as @a if score @s team_id matches 6 if score @s dist2 < team_cyan dist2 run scoreboard players operation team_cyan dist2 = @s dist2
+execute as @a if score @s team_id matches 7 if score @s dist2 < team_orange dist2 run scoreboard players operation team_orange dist2 = @s dist2
+execute as @a if score @s team_id matches 8 if score @s dist2 < team_gris dist2 run scoreboard players operation team_gris dist2 = @s dist2
 
 # 4c) Équipes vides -> grosse pénalité (pour finir en bas du classement)
 execute if score team_rouge dist2 matches 2147483647 run scoreboard players set team_rouge dist2 2000000000
@@ -45,6 +49,8 @@ execute if score team_vert dist2 matches 2147483647 run scoreboard players set t
 execute if score team_jaune dist2 matches 2147483647 run scoreboard players set team_jaune dist2 2000000000
 execute if score team_magenta dist2 matches 2147483647 run scoreboard players set team_magenta dist2 2000000000
 execute if score team_cyan dist2 matches 2147483647 run scoreboard players set team_cyan dist2 2000000000
+execute if score team_orange dist2 matches 2147483647 run scoreboard players set team_orange dist2 2000000000
+execute if score team_gris dist2 matches 2147483647 run scoreboard players set team_gris dist2 2000000000
 
 # 5) Inverser pour trier "plus proche = plus haut" (la sidebar trie du plus grand au plus petit)
 scoreboard players set "Rouge" rank 2000000000
@@ -59,6 +65,10 @@ scoreboard players set "Magenta" rank 2000000000
 scoreboard players operation "Magenta" rank -= team_magenta dist2
 scoreboard players set "Cyan" rank 2000000000
 scoreboard players operation "Cyan" rank -= team_cyan dist2
+scoreboard players set "Orange" rank 2000000000
+scoreboard players operation "Orange" rank -= team_orange dist2
+scoreboard players set "Gris" rank 2000000000
+scoreboard players operation "Gris" rank -= team_gris dist2
 
 # 6) Laisser visible 10s puis masquer
 tellraw @a {"text":"Classement (hors vainqueur) affiché à droite.","color":"dark_purple"}
