@@ -1,0 +1,2 @@
+execute in minecraft:the_end as @e[type=minecraft:ender_dragon,limit=1] run tag @s remove rd_configured
+execute in minecraft:the_end as @e[type=minecraft:ender_dragon,limit=1] run function runnerdragon:dragon/apply_hp_from_score

@@ -3,6 +3,7 @@
     "runnerdragon:timer_tick",
     "runnerdragon:check_win",
     "runnerdragon:check_team_select",
-    "runnerdragon:lobby"
+    "runnerdragon:lobby",
+    "runnerdragon:dragon/tick"
   ]
 }

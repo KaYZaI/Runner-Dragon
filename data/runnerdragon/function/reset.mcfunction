@@ -76,9 +76,9 @@ scoreboard objectives add portal_z dummy
 scoreboard players set portal portal_x 0
 scoreboard players set portal portal_z 0
 
-# 7) (Optionnel) d’autres objectifs si présents chez toi :
-# scoreboard objectives remove time
-# scoreboard objectives add time dummy
+# 7) Config du dragon
+scoreboard players set rd_explode_block dragon_cfg 0
+scoreboard players set rd_hp dragon_cfg 200
 
 # 8) Réappliquer la config des équipes (couleurs, friendlyFire, collisions)
 function runnerdragon:teams_configs

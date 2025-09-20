@@ -43,6 +43,11 @@ scoreboard objectives modify rank displayname {"text":"Progression vers l'End (�
 scoreboard players set $state game 0
 scoreboard players set @a hasTeamItems 0
 
+# Config du dragon
+scoreboard objectives add dragon_cfg dummy
+scoreboard players set rd_explode_block dragon_cfg 0
+scoreboard players set rd_hp dragon_cfg 200
+
 # Création des équipes (sans couleur ni nom pour l’instant)
 team add rouge
 team add bleu
